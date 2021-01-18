@@ -5,7 +5,6 @@ describe('', () => {
 	it('dev', async () => {
 
 		const {CLIENT_EMAIL: client_email, PRIVATE_KEY: private_key, PROJECTID: projectId} = process.env
-		console.log(client_email.length, private_key.length,projectId.length)
 		const client = new ClientBuilder({client_email, private_key, projectId}).build()
 		const file = path.resolve(__dirname, 'question37.png')
 		const [data, result] = await textDetection(client, file)
