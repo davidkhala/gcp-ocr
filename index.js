@@ -1,8 +1,11 @@
-const {ImageAnnotatorClient}= require('@google-cloud/vision');
-
-exports.textDetection = async (client = new ImageAnnotatorClient(),file)=>{
-	const [result] = await client.textDetection(file);
-	console.log(result);
+/**
+ *
+ * @param {ImageAnnotatorClient} client
+ * @param {string} filePath
+ * @return {Promise<(string|google.cloud.vision.v1.IAnnotateImageResponse)[]>}
+ */
+exports.textDetection = async (client, filePath) => {
+	const [result] = await client.textDetection(filePath);
 	const data = result.fullTextAnnotation.text;
-	return data
+	return [data, result]
 }

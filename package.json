@@ -1,10 +1,16 @@
 {
   "name": "gcp-ocr",
   "version": "0.0.0",
-  "description": "Optical Character Recognition using google's cloud vision API",
+  "description": "Optical character recognition using Google's Cloud Vision API",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "mocha test/test.js"
+  },
+  "dependencies": {
+    "@google-cloud/vision": "latest"
+  },
+  "devDependencies": {
+    "mocha": "latest"
   },
   "repository": {
     "type": "git",
@@ -14,7 +20,7 @@
     "OCR",
     "GCP"
   ],
-  "author": "David Liu<david-khala@hotmail.com>",
+  "author": "David Liu <david-khala@hotmail.com>",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/davidkhala/GCP-OCR/issues"
