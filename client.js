@@ -1,7 +1,7 @@
 // Reference: https://googleapis.dev/nodejs/vision/latest/v1.ImageAnnotatorClient.html
-const {ImageAnnotatorClient} = require('@google-cloud/vision');
+import {ImageAnnotatorClient} from '@google-cloud/vision';
 
-class ImageAnnotatorClientBuilder {
+export default class ImageAnnotatorClientBuilder {
 	/**
 	 *
 	 * @param {string} client_email
@@ -23,6 +23,3 @@ class ImageAnnotatorClientBuilder {
 		return new ImageAnnotatorClient(this.options)
 	}
 }
-
-
-module.exports = ImageAnnotatorClientBuilder

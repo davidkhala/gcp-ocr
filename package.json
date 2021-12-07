@@ -4,7 +4,7 @@
   "description": "Optical character recognition using Google's Cloud Vision API",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/test.js"
+    "test": "mocha test"
   },
   "dependencies": {
     "@google-cloud/vision": "latest"
@@ -20,6 +20,7 @@
     "OCR",
     "GCP"
   ],
+  "type": "module",
   "author": "David Liu <david-khala@hotmail.com>",
   "license": "Apache-2.0",
   "bugs": {
