@@ -3,14 +3,17 @@ import path from 'path'
 import ClientBuilder from '../client.js'
 import {fileURLToPath} from "url";
 
-describe('', () => {
+describe('', function () {
+	this.timeout(0)
 	it('dev', async () => {
 
 
 		const __filename = fileURLToPath(import.meta.url);
 		const __dirname = path.dirname(__filename);
 
-		const {CLIENT_EMAIL: client_email, PRIVATE_KEY: private_key, PROJECTID: projectId} = process.env
+		const {PRIVATE_KEY: private_key} = process.env
+		const projectId = 'gcp-api-davidkhala'
+		const client_email = 'ocr-nodejs@gcp-api-davidkhala.iam.gserviceaccount.com'
 		const client = new ClientBuilder({client_email, private_key, projectId}).build()
 		const file = path.resolve(__dirname, 'question37.png')
 		const [data, result] = await textDetection(client, file)
